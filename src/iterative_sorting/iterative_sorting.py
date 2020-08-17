@@ -7,11 +7,14 @@ def selection_sort(arr):
         # TO-DO: find next smallest element
         # (hint, can do in 3 loc)
         # Your code here
-
-
+        for j in range((cur_index + 1), len(arr)):
+            if arr[j] < arr[smallest_index]: 
+                smallest_index = j
+        temp = arr[i] 
+        arr[i] = arr[smallest_index]
+        arr[smallest_index] = temp
         # TO-DO: swap
         # Your code here
-
     return arr
 
 
@@ -65,8 +68,32 @@ buckets.
 
 What is the time and space complexity of the counting sort algorithm?
 '''
-def counting_sort(arr, maximum=None):
-    # Your code here
+# def counting_sort(arr, max_value=None):
+#     # Your code here
+#     counts = [0] * (max_value + 1)
+#     for item in the_list:
+#         counts[item] += 1
 
+#     # Overwrite counts to hold the next index an item with
+#     # a given value goes. So, counts[4] will now store the index
+#     # where the next 4 goes, not the number of 4's our
+#     # list has.
+#     num_items_before = 0
+#     for i, count in enumerate(counts):
+#         counts[i] = num_items_before
+#         num_items_before += count
 
-    return arr
+#     # Output list to be filled in
+#     sorted_list = [None] * len(the_list)
+
+#     # Run through the input list
+#     for item in the_list:
+        
+#         # Place the item in the sorted list
+#         sorted_list[ counts[item] ] = item
+
+#         # And, make sure the next item we see with the same value
+#         # goes after the one we just placed
+#         counts[item] += 1
+
+#     return sorted_list
