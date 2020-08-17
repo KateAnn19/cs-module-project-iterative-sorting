@@ -16,11 +16,37 @@ def selection_sort(arr):
 
 
 # TO-DO:  implement the Bubble Sort function below
+# def bubble_sort(arr):
+#     # Your code here
+#     n = len(arr) 
+#     # Traverse through all array elements 
+#     for i in range(n): 
+#         swapped = False
+#     # range(n) also work but outer loop will repeat one time more than needed.    
+#         # Last i elements are already in place 
+#         for j in range(0, n-i-1): 
+#             # traverse the array from 0 to n-i-1 
+#             # Swap if the element found is greater 
+#             # than the next element 
+#             if arr[j] > arr[j+1]: 
+#                 temp = arr[j]
+#                 arr[j] = arr[j+1], 
+#                 arr[j+1] = temp
+#         if swapped == False:
+#             break
+#     return arr
+
 def bubble_sort(arr):
-    # Your code here
-
-
-    return arr
+    while True:
+        swapcount = False
+        for i in range(0, len(arr) - 1):
+            if arr[i] > arr[i + 1]:
+                temp = arr[i]
+                arr[i] = arr[i + 1] 
+                arr[i + 1] = temp
+                swapcount = True
+        if swapcount == False:
+            return arr
 
 '''
 STRETCH: implement the Counting Sort function below
