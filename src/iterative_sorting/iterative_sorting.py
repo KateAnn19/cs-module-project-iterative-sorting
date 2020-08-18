@@ -68,32 +68,34 @@ buckets.
 
 What is the time and space complexity of the counting sort algorithm?
 '''
-# def counting_sort(arr, max_value=None):
-#     # Your code here
-#     counts = [0] * (max_value + 1)
-#     for item in the_list:
-#         counts[item] += 1
+def counting_sort(arr, max_value=None):
+    if len(arr) == 0:
+        return []
 
-#     # Overwrite counts to hold the next index an item with
-#     # a given value goes. So, counts[4] will now store the index
-#     # where the next 4 goes, not the number of 4's our
-#     # list has.
-#     num_items_before = 0
-#     for i, count in enumerate(counts):
-#         counts[i] = num_items_before
-#         num_items_before += count
+    if max_value == None:
+        max_value = arr[0]
+        for j in range(len(arr) - 1):
+            if arr[j] < 0:
+                return 'Error, negative numbers not allowed in Count Sort'
+            if max_value < arr[j]:
+                #print(arr[j])
+                max_value = arr[j]
 
-#     # Output list to be filled in
-#     sorted_list = [None] * len(the_list)
+    print(max_value)
+    m = max_value + 1
+    count = [0] * m              
+    print(count)  
+    
+    for a in arr:
+    # count occurences
+        count[a] += 1             
+    i = 0
+    for a in range(m):            
+        for c in range(count[a]):  
+            arr[i] = a
+            i += 1
+    return arr
 
-#     # Run through the input list
-#     for item in the_list:
-        
-#         # Place the item in the sorted list
-#         sorted_list[ counts[item] ] = item
+    return sorted_list
 
-#         # And, make sure the next item we see with the same value
-#         # goes after the one we just placed
-#         counts[item] += 1
-
-#     return sorted_list
+counting_sort([1, 5, 8, 4, 2, 9, 6, 0, 3, 7])
