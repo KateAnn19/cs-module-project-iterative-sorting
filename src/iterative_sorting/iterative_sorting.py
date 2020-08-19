@@ -78,7 +78,6 @@ def counting_sort(arr, max_value=None):
             if arr[j] < 0:
                 return 'Error, negative numbers not allowed in Count Sort'
             if max_value < arr[j]:
-                #print(arr[j])
                 max_value = arr[j]
 
     print(max_value)
